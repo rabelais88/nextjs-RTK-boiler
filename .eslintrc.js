@@ -2,6 +2,7 @@ module.exports = {
   env: {
     browser: true,
     es6: true,
+    'jest/globals': true,
   },
   extends: ['plugin:react/recommended', 'airbnb'],
   globals: {
@@ -15,7 +16,7 @@ module.exports = {
     ecmaVersion: 2018,
     sourceType: 'module',
   },
-  plugins: ['react'],
+  plugins: ['react', 'jest'],
   rules: {
     'no-unused-vars': 1,
     'no-underscore-dangle': 0,
@@ -32,5 +33,6 @@ module.exports = {
     'max-len': 0,
     'prefer-destructuring': 1,
     'object-curly-newline': 0,
+    'global-require': 1,
   },
 };

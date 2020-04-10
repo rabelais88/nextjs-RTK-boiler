@@ -2,6 +2,8 @@ import React from 'react';
 import { connect, useSelector, shallowEqual } from 'react-redux';
 
 import { tick, getUser, tickB } from '../stores/action';
+import mainStyle from '../styles/main.postcss';
+import enhancer from '../lib/enhancer';
 
 const useUserStore = () => useSelector((state) => state.user, shallowEqual);
 
@@ -21,6 +23,9 @@ const indexPage = ({ dispatch }) => {
   }
   return (
     <div>
+      <style global jsx>
+        {mainStyle}
+      </style>
       <h1>hello world!</h1>
       <p>{light.toString()}</p>
       <p>{userId}</p>
@@ -32,4 +37,5 @@ const indexPage = ({ dispatch }) => {
   );
 };
 
-export default connect((state) => state)(indexPage);
+// export default connect((state) => state)(indexPage);
+export default enhancer(indexPage, [connect((state) => state)]);
