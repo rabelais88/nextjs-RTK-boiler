@@ -1,0 +1,1 @@
+# Next.js + Redux Toolkit + Redux Persist Boilerplate
